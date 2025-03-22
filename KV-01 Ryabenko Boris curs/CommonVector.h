@@ -1,17 +1,17 @@
 #ifndef COMMONVECTOR_H_INCLUDED
 #define COMMONVECTOR_H_INCLUDED
-/*модуль для підключення потрібних бібліотек, експорта функцій та
-виділення пам'яті, також модуль містить загальні дані про тривимірний
-масив та вектор, які використовуються для підрахунку часу алгоритму*/
+/*module for connecting the necessary libraries, exporting functions and
+memory allocation, the module also contains general data about the three-dimensional
+array and vector used to calculate the algorithm time*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-//Бібліотека, яка потрібна для використання функції clock();
+/*The library required to use the clock() function;*/
 #include <time.h>
-//Бібліотека для роботи з динамічнимим даними
+/*Library for working with dynamic data*/
 #include <malloc.h>
-//Розміри 3-вимірного масиву, який використовуємо для підрахунку часу роботи алгоритмів
+/*The dimensions of the 3-dimensional array used to calculate the time of the algorithms*/
 #define Pt 150000//К-сть перерізів масиву
 #define Mt 16//К-сть рядків у одному перерізі масива
 #define Nt 16//К-сть стовбчиків у одному перерізі масива
@@ -25,11 +25,11 @@ extern int*** Arr;
 // Оголошення вектора для використання його в сортуваннях
 int Vector[VectorLength];
 //Функція виділення динамічної пам'яті для масиву
-void ArrayMemory(int P, int M, int N);
+void array_memory(int P, int M, int N);
 // Функція яка заповнює 3-вимірний масив
-void ArrayFill(int ***Arr, int order, int P, int M, int N);
+void array_fill(int ***Arr, int order, int P, int M, int N);
 // Функція яка заповнює вектор .
-void VectorFill(int order);
+void vector_fill(int order);
 //Функція звільнення пам'яті від динамічного масиву
-void FreeArray(int P, int M);
+void free_array(int P, int M);
 #endif // COMMONVECTOR_H_INCLUDED

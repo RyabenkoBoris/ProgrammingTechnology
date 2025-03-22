@@ -13,13 +13,13 @@
 // з максимальними значеннями
 #define min_max_number 3
 // Масив значень часу роботи алгоритма
-extern clock_t Res[measurements_number];
+extern clock_t res[measurements_number];
 // Функція обробки і усереднення значень вимірів
 // часу роботи алгоритма
 // Повертає усереднене значення часу роботи алгоритма.
-float MeasurementProcessing();
+float measurement_processing();
 //Функція, яка повністю оброблює час сортувань тривимірного масиву та виводить його на екран
-void ArrayMeasurement(clock_t (*Func)(int*** Arr, int P, int M, int N),int P, int M, int N, int type);
+void array_measurement(clock_t (*Func)(int*** Arr, int P, int M, int N),int P, int M, int N, int type);
 //Функція, яка повністю оброблює час сортувань вектора та виводить його на екран
-void VectorMeasurement(clock_t (*Func)(void), int type);
+void vector_measurement(clock_t (*Func)(void), int type);
 #endif // MEASUREMENT_H_INCLUDED

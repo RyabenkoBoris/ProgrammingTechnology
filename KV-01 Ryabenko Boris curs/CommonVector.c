@@ -1,8 +1,8 @@
 #include "CommonVector.h"
 int ***Arr;
 int sum[Pt];
-//Функція для виділення пам'яті динамічного тривимірного масиву
-void ArrayMemory(int P, int M, int N)
+/*Function for allocating memory for a dynamic three-dimensional array*/
+void array_memory(int P, int M, int N)
 {
     Arr = (int***)malloc(P * sizeof(int**));
     for (int k = 0; k < P; k++)
@@ -12,9 +12,9 @@ void ArrayMemory(int P, int M, int N)
             Arr[k][i] = (int*)malloc(N * sizeof(int));
     }
 }
-//Функція заповняє масив, залежно від параметру type буде вибрано:
-// впорядкований, невпорядкований, обернено впорядкований
-void ArrayFill(int ***Arr, int P, int M, int N, int type)
+/*The function fills an array, depending on the type parameter, it will be selected:
+ordered, unordered, inversely ordered */
+void array_fill(int ***Arr, int P, int M, int N, int type)
 {
     int begin = 1, end = P*M*N;
     for (int k = 0; k < P; k++)
@@ -29,9 +29,9 @@ void ArrayFill(int ***Arr, int P, int M, int N, int type)
                     Arr[k][i][j] = end--;
             }
 }
-//Функція заповняє вектор, залежно від параметру type буде вибрано:
-// впорядкований, невпорядкований, обернено впорядкований
-void VectorFill(int type)
+/*The function fills a vector, depending on the type parameter, it will be selected:
+ordered, unordered, inversely ordered*/
+void vector_fill(int type)
 {
     int begin = 1,end = VectorLength ;
     for (int i = 0; i < VectorLength; i++)
@@ -44,8 +44,8 @@ void VectorFill(int type)
             Vector[i] = end--;
     }
 }
-//Функція для звільнення пам'яті динамічного тривимірного масиву
-void FreeArray(int P, int M)
+/*Function to free the memory of a dynamic three-dimensional array*/
+void free_array(int P, int M)
 {
     for (int k = 0; k < P; k++)
     {
